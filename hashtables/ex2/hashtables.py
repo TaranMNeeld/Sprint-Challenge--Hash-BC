@@ -63,7 +63,6 @@ def hash_table_remove(hash_table, key):
             last_pair.next = current_pair.next
 
 
-
 def hash_table_retrieve(hash_table, key):
     index = hash(key, len(hash_table.storage))
 

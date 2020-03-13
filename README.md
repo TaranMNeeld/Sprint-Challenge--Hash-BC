@@ -23,12 +23,25 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 ## Interview Questions
 
 Explain in detail the workings of a dynamic array:
+A: A dynamic array can potentially have any amount of items inside of it.
+The dynamic array expands every time it reaches max capacity, or close to max capacity.
+
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+A: The runtime complexity of these operations is O(n). This is because in the worst case, you would remove an item from the front,
+then shift every other element over.
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+A: It is O(n) because the runtime is depending on the amount of items given to the array. I would say the input and runtime are directly proportional.
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+A: A block chain is a list of blocks and each block references the previous block by hashing the previous
+block and setting that hash equal to the next block previous hash value. 
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+A: Miners have to come to a consensus about the validity of any newly mined block. To do this, miners agree upon a certain condition,
+and meeting that condition creates a new block. The condition is to find a hash that contains a certain amount of leading zeros.
+The proof of work encodes and hashes the last block that was mined and any guess of random characters. Without proof of work,
+people can say they mined blocks that they didn't mine. Plus, it would make duplicate transactions possible.
 
 ## Project Set Up
 

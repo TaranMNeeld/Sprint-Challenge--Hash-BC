@@ -18,10 +18,11 @@ def reconstruct_trip(tickets, length):
 
     for ticket in tickets:
         hash_table_insert(hashtable, ticket.source, ticket.destination)
-    for i in range(length):
-        key = hashtable.storage[i].key
-        value = hashtable.storage[i].value
-        if key is None:
-            route[0] = value
 
-    return route
+    source = 'NONE'
+    for index, item in enumerate(hashtable.storage):
+        source = hash_table_retrieve(hashtable, source)
+        if source != "NONE":
+            route[index] = source
+
+    return [i for i in route if i]
